@@ -1,1 +1,0 @@
-#!/bin/bash -e /usr/local/sbin \n/usr/sbin \n/sbin \n/usr/local/bin \n/usr/bin \n/bin \n/usr/local/games \n/usr/games
