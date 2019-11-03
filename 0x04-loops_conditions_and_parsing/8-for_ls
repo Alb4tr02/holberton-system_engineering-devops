@@ -2,5 +2,5 @@
 # This script prints "Holberton school" ten times
 l=$(ls)
 for word in $l; do
-    echo "${word//[0-9]/}" | tr -d  "-"
+    echo "$word" | cut -d '-' -f2
 done
