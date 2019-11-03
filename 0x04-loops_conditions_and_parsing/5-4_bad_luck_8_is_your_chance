@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# This script prints "Holberton School" ten times
+i=0
+while [ "$i" -lt 10 ]; do
+    if [ "$i" -ne 3 ] && [ "$i" -ne 7 ]; then
+       echo "Holberton School"
+    fi
+    if [ "$i" -eq 7 ]; then
+	echo "good luck"
+    fi
+    if [ "$i" -eq 3 ]; then
+	echo "bad luck"
+    fi
+    ((i++))
+done
