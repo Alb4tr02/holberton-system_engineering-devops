@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# This script prints "Holberton school" ten times
+f="holbertonschool"
+if [ -e $f ]; then
+    echo "$f file exists"
+    if ! [ -s $f ]; then
+    echo "$f file is empty"
+    else
+	echo "$f file is not empty"
+    fi
+    if [ -f $f ]; then
+	echo "$f file is a regular file"
+    fi
+else
+    echo "$f file does not exist"
+fi
