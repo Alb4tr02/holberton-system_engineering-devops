@@ -4,11 +4,9 @@ i=0
 while [ "$i" -lt 10 ]; do
     if [ "$i" -ne 3 ] && [ "$i" -ne 7 ]; then
        echo "Holberton School"
-    fi
-    if [ "$i" -eq 7 ]; then
+    elif [ "$i" -eq 7 ]; then
 	echo "good luck"
-    fi
-    if [ "$i" -eq 3 ]; then
+    else
 	echo "bad luck"
     fi
     ((i++))
