@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# This script prints "Holberton School" ten times
+i=1
+while [ "$i" -lt 21 ]; do
+    case "$i" in
+	4) printf "%d\nbad luck from China\n" $i
+	   ;;
+	9) printf "%d\nbad luck from Japan\n" $i
+	   ;;
+	17) printf "%d\nbad luck from Italy\n" $i
+	    ;;
+	*) echo "$i"
+	   ;;
+    esac
+    ((i++))
+done
