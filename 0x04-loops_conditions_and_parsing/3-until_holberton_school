@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script prints "Holberton School" ten times
+i=0
+until [ "$i" -gt 9 ]; do
+    echo "Holberton School"
+    ((i++))
+done
