@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#Script that writes "I am alive!" into /tmp/my_process file
+if  ! [ -e /tmp/my_process ]; then
+    touch /tmp/my_process
+fi
+while 'true'; do
+    echo "I am alive!" >> /tmp/my_process
+    sleep 2
+done
