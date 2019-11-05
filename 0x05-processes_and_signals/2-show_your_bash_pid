@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# lines with "bash" word
+ps auxf | grep "bash"
