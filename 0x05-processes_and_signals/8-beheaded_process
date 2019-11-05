@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#kill! :v
+kill -SIGKILL "$(pgrep -f ./7-highlander)"
