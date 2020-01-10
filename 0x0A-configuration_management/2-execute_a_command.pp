@@ -1,5 +1,5 @@
 # kill a command
 
 exec {'kill':
-  command => 'pkill killmenow',
+  command => '/usr/bin/pkill killmenow',
   }
