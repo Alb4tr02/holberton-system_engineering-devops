@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#configuration
+
+apt-get -y update
+apt-get -y install nginx
+echo "Holberton School"  > /var/www/html/index.nginx-debian.html
+service nginex restart
+st="rewrite ^/redirect_me$ https://www.youtube.com/watch?v=D5iNHy7qPqk permanent;"
+sed -e "66i ${st}" /etc/nginx/sites-available/default
