@@ -5,5 +5,5 @@ apt-get -y update
 apt-get -y install nginx
 echo "Holberton School"  > /var/www/html/index.nginx-debian.html
 st="rewrite ^/redirect_me$ https://www.youtube.com/watch?v=D5iNHy7qPqk permanent;"
-sed -i "66i ${st}" /etc/nginx/sites-available/defaul
-service nginex start
+sudo sed -i "66i ${st}" /etc/nginx/sites-available/default
+sudo service nginex start
