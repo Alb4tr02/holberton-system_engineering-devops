@@ -10,7 +10,7 @@ exec {'redirect_page':
 
 command => '/usr/bin/sudo /bin/sed -i "66i rewrite ^/redirect_me https://www.youtube.com/ permanent;" /etc/nginx/sites-available/default',
 }
-exec {'redirect_page':
+exec {'start_server':
 
-command => '/usr/bin/sudo /usr/sbin/service nginx restart',
+command => '/usr/bin/sudo /usr/sbin/service nginx start',
 }
