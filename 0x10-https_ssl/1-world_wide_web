@@ -12,7 +12,7 @@ print_msg() {
     echo "The subdomain $2 is a $record record and points to $ip"
 }
 if [[ $# -gt 1 ]]; then
-    print_msg "$2.$1"
+    print_msg "$2.$1" "$2"
 else
     print_msg "www.$1" "www"
     print_msg "lb-01.$1" "lb-01"
