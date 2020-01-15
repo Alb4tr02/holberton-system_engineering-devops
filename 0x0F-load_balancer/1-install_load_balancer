@@ -9,7 +9,7 @@ sudo sed -i '$a \\tmode    http' /etc/haproxy/haproxy.cfg
 sudo sed -i '$a \\toption  httpclose' /etc/haproxy/haproxy.cfg
 sudo sed -i '$a \\toption  http-server-close' /etc/haproxy/haproxy.cfg
 sudo sed -i '$a \\toption  forwardfor' /etc/haproxy/haproxy.cfg
-sudo sed -i '$a \\tdefault_backend web-backend \\n' /etc/haproxy/haproxy.cfg
+sudo sed -i '$a \\tdefault_backend web-backend \n' /etc/haproxy/haproxy.cfg
 sudo sed -i '$a backend web-backend' /etc/haproxy/haproxy.cfg
 sudo sed -i '$a \\tmode    http' /etc/haproxy/haproxy.cfg
 sudo sed -i '$a \\tbalance roundrobin' /etc/haproxy/haproxy.cfg
