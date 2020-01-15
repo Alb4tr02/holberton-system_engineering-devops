@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+#script that will display information about subdomains.
+
+exec_dig() {
+    #execute dig command and returns record type and ip
+    dig  +nocmd +noall +answer  "$1" | awk '{print $4 " " $5}'
+}
+print_msg() {
+    #print message formated
+    record=$(exec_dig "$1" | awk '{print $1}')
+    ip=$(exec_dig "$1" | awk '{print $2}')
+    echo "The subdomain $1 is a $record record and points to $ip"
+}
+if [[ $# -gt 1 ]]; then
+    print_msg "$2.$1"
+else
+    print_msg "www.$1"
+    print_msg "lb-01.$1"
+    print_msg "web-01.$1"
+    print_msg "web-02.$1"
+fi
