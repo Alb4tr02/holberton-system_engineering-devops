@@ -1,12 +1,9 @@
 #config server
-exec {'update':
-command => '/usr/bin/sudo /usr/bin/apt-get  -y update',
-}
 
-exec {'install':
-command => '/usr/bin/sudo /usr/bin/apt-get  -y install nginx',
+exec {'nginx':
+command  => 'sudo apt-get -y update && sudo apt-get -y install nginx',
+provider => shell,
 }
-
 exec {'hlbtn_page':
 command => '/usr/bin/sudo /bin/echo Holberton School > /var/www/html/index.nginx-debian.html',
 }
