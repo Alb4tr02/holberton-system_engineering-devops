@@ -3,7 +3,15 @@
 
 sudo apt-get update
 sudo apt-get -y install haproxy=1.6.\*
+sudo sed -i '$a frontend Accesos_HTTP' /etc/haproxy/haproxy.cfg
+sudo sed -i '$a \\tbind    *:80' /etc/haproxy/haproxy.cfg
+sudo sed -i '$a \\tmode    http' /etc/haproxy/haproxy.cfg
+sudo sed -i '$a \\toption  httpclose' /etc/haproxy/haproxy.cfg
+sudo sed -i '$a \\toption  http-server-close' /etc/haproxy/haproxy.cfg
+sudo sed -i '$a \\toption  forwardfor' /etc/haproxy/haproxy.cfg
+sudo sed -i '$a \\tdefault_backend web-backend \\n' /etc/haproxy/haproxy.cfg
 sudo sed -i '$a backend web-backend' /etc/haproxy/haproxy.cfg
+sudo sed -i '$a \\tmode    http' /etc/haproxy/haproxy.cfg
 sudo sed -i '$a \\tbalance roundrobin' /etc/haproxy/haproxy.cfg
 sudo sed -i '$a \\tserver 834-web-01 34.74.125.125:80 check' /etc/haproxy/haproxy.cfg
 sudo sed -i '$a \\tserver 834-web-02 34.74.99.22:80 check' /etc/haproxy/haproxy.cfg
