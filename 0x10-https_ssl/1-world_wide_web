@@ -9,13 +9,13 @@ print_msg() {
     #print message formated
     record=$(exec_dig "$1" | awk '{print $1}')
     ip=$(exec_dig "$1" | awk '{print $2}')
-    echo "The subdomain $1 is a $record record and points to $ip"
+    echo "The subdomain $2 is a $record record and points to $ip"
 }
 if [[ $# -gt 1 ]]; then
     print_msg "$2.$1"
 else
-    print_msg "www.$1"
-    print_msg "lb-01.$1"
-    print_msg "web-01.$1"
-    print_msg "web-02.$1"
+    print_msg "www.$1" "www"
+    print_msg "lb-01.$1" "lb-01"
+    print_msg "web-01.$1" "web-01"
+    print_msg "web-02.$1" "web-02"
 fi
