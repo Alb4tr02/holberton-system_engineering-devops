@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # CHange configuration files
-sed -i 's/\/etc\/nginx\/sites-enabled\/\*/\/etc\/nginx\/sites-enabled\/default/g' /etc/nginx/nginx.conf
 sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
 service nginx start
 kill -SIGKILL "$(cat /run/nginx.pid)"
