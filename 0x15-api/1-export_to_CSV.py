@@ -3,9 +3,9 @@
 """  Python script that takes in a URL, sends a request to the URL and displays
      the body of the response. """
 
+import csv
 import requests
 import sys
-import csv
 
 if __name__ == "__main__":
     url = "https://jsonplaceholder.typicode.com/users/"
