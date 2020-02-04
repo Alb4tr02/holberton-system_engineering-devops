@@ -21,7 +21,7 @@ if __name__ == "__main__":
         l = []
         for task in jjson:
             l.append({"username": name, "task": task['title'],
-                      "completed": task['completed'],})
+                      "completed": task['completed']})
         all_data[query] = l
     print(all_data)
     with my_file:
