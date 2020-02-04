@@ -20,8 +20,9 @@ if __name__ == "__main__":
         jjson = req.json()
         l = []
         for task in jjson:
-            l.append({"task": task['title'], "completed": task['completed'],
-                      "username": name})
-        all_data = {query: l}
+            l.append({"username": name, "task": task['title'],
+                      "completed": task['completed'],})
+        all_data[query] = l
+    print(all_data)
     with my_file:
         json.dump(all_data, my_file)
