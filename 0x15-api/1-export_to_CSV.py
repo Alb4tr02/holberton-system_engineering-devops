@@ -13,7 +13,7 @@ if __name__ == "__main__":
     url = url+query
     req = requests.get(url)
     json = req.json()
-    name = json['name']
+    name = json['username']
     url = "https://jsonplaceholder.typicode.com/todos/"
     req = requests.get(url, params={"userId": query})
     json = req.json()
