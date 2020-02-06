@@ -12,6 +12,7 @@ def top_ten(subreddit):
     req = requests.get(url, headers=headers, params={'limit': 10})
     json = req.json()
     if ('error' in json.keys()):
-        return 0
+        print(None)
+        return
     for post in json['data']['children']:
         print(post['data']['title'])
