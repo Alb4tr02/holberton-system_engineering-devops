@@ -39,6 +39,7 @@ def count_words(subreddit, word_list, nexT="", count={}):
     else:
         aux = sorted(count.items(), key=operator.itemgetter(0), reverse=False)
         aux1 = {}
+        flag = True
         for element in aux:
             aux1[element[0]] = element[1]
         aux = sorted(aux1.items(), key=operator.itemgetter(1), reverse=True)
@@ -48,3 +49,6 @@ def count_words(subreddit, word_list, nexT="", count={}):
         for key, value in aux1.items():
             if (value != 0):
                 print("{}: {}".format(key, value))
+                flag = False
+        if (flag):
+            print("")
