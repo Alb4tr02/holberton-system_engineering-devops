@@ -25,10 +25,12 @@ def count_words(subreddit, word_list, nexT="", count={}):
     headers = {'User-agent': 'Alb4tr02'}
     url = "https://www.reddit.com/r/"+subreddit+"/hot/.json"+nexT
     req = requests.get(url, headers=headers)
+    req1 = requests.get("https://www.reddit.com/r/"+subreddit, headers=headers)
+    if (req1.status_code != 200):
+        return
     json = req.json()
     if ('error' in json.keys()):
-        print("")
-        return None
+        return
     for post in json['data']['children']:
         title = post['data']['title']
         for word in word_list:
@@ -52,3 +54,4 @@ def count_words(subreddit, word_list, nexT="", count={}):
                 flag = False
         if (flag):
             print("")
+        return
