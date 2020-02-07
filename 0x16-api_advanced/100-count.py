@@ -52,6 +52,4 @@ def count_words(subreddit, word_list, nexT="", count={}):
             if (value != 0):
                 print("{}: {}".format(key, value))
                 flag = False
-        if (flag):
-            print("")
         return
