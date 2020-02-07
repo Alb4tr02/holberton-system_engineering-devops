@@ -27,6 +27,7 @@ def count_words(subreddit, word_list, nexT="", count={}):
     req = requests.get(url, headers=headers)
     req1 = requests.get("https://www.reddit.com/r/"+subreddit, headers=headers)
     if (req1.status_code != 200):
+        print("")
         return
     json = req.json()
     if ('error' in json.keys()):
@@ -52,4 +53,6 @@ def count_words(subreddit, word_list, nexT="", count={}):
             if (value != 0):
                 print("{}: {}".format(key, value))
                 flag = False
+        if (flag):
+            print("")
         return
