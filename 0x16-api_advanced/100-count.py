@@ -3,8 +3,8 @@
 """  Python script that takes in a URL, sends a request to the URL and displays
      the body of the response. """
 
-import requests
 import operator
+import requests
 
 
 def count_w(word, title):
@@ -44,7 +44,7 @@ def count_words(subreddit, word_list, nexT="", count={}):
         flag = True
         for element in aux:
             aux1[element[0]] = element[1]
-        aux = sorted(aux1.items(), key=operator.itemgetter(1), reverse=True)
+        aux = sorted(aux1.items(), key=operator.itemgetter(1), reverse=False)
         aux1 = {}
         for element in aux:
             aux1[element[0]] = element[1]
